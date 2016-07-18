@@ -68,6 +68,7 @@ var CoincapBadge = (function(){
         charts: [
           {color: "#FF5555", f: function(x){ return (Math.sin(x*50)+1)/2; }}
         ],
+        direction: 0,
         volume24h: 0,
         marketCap: 0,
         price: 0,
@@ -92,6 +93,7 @@ var CoincapBadge = (function(){
           WAVES: true
         };
         if (data.short === this.props.coin){
+          this.state.direction = !this.state.price ? 0 : Number(data.price) > this.state.price ? -1 : 1;
           this.state.volume24h = Number(data.usdVolume);
           this.state.price = Number(data.price);
           this.state.marketCap = Number(data.mktcap);
@@ -163,7 +165,13 @@ var CoincapBadge = (function(){
           </div>
 
           <div className="coincap-badge-down">
-            <div className="coincap-badge-price">
+            <div
+              className="coincap-badge-price"
+              style={{
+                color:
+                  this.state.direction ===  1 ? "rgb(108, 168, 49)" :
+                  this.state.direction === -1 ? "rgb(206, 92, 92)" :
+                  "white"}}>
                 ${this.state.price.toFixed(2)}
             </div>
 
