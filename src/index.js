@@ -12,7 +12,7 @@ var CoincapBadge = (function(){
     else {
       onLoadCoin.push([coin, callback]);
       if (onLoadCoin.length === 1) {
-        xhr({uri:"http://coincap.io/front"},
+        xhr({uri:"https://coincap.io/front"},
           function(err, res, body){
             var front = JSON.parse(body);
             for (var i=0, l=front.length; i<l; ++i)
@@ -29,7 +29,7 @@ var CoincapBadge = (function(){
   function onTrade(coin, callback){
     onTradeCallbacks[coin] = callback;
     if (!socket){
-      socket = io.connect('http://socket.coincap.io');
+      socket = io.connect('https://socket.coincap.io');
       socket.on('trades', function (msg) {
         var coin = msg.message.msg;
         if (onTradeCallbacks[coin.short])
@@ -71,7 +71,7 @@ var CoincapBadge = (function(){
         volume24h: 0,
         marketCap: 0,
         price: 0,
-        coinIconUrl: "http://coincap.io/images/coins/missing.png"
+        coinIconUrl: "https://coincap.io/images/coins/missing.png"
       }
     },
     componentDidMount: function(){
@@ -87,13 +87,13 @@ var CoincapBadge = (function(){
           this.state.coinIconUrl
             = locallyHostedLogo[data.short]
             ? "images/"+data.short+".png"
-            : "http://coincap.io/images/coins/"+data.long+".png";
+            : "https://coincap.io/images/coins/"+data.long+".png";
           this.forceUpdate();
         };
       }.bind(this);
       loadCoin(coin, loadCoinData);
       onTrade(coin, loadCoinData);
-      xhr({uri:"http://coincap.io/history/365day/"+coin}, 
+      xhr({uri:"https://coincap.io/history/365day/"+coin}, 
         function(err, res, body){
           function pointsToFunction(points, width){
             var minX = points[0][0];
