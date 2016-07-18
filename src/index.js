@@ -29,7 +29,7 @@ var CoincapBadge = (function(){
   function onTrade(coin, callback){
     onTradeCallbacks[coin] = callback;
     if (!socket){
-      socket = io.connect('https://socket.coincap.io');
+      socket = io.connect('http://socket.coincap.io');
       socket.on('trades', function (msg) {
         var coin = msg.message.msg;
         if (onTradeCallbacks[coin.short])
@@ -174,7 +174,7 @@ window.onload = function(){
   ReactDOM.render(
     <div>{
       ["BTC", "ETH", "STEEM", "XRP",
-       "LTC", "DAO", "EMC", "DASH",
+       "LTC", "EMC", "XEM", "DASH",
        "MAID", "LSK", "DOGE", "NXT",
        "XMR", "WAVES", "AMP", "DGD"].map(
       function(coin){
