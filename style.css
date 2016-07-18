@@ -1,0 +1,94 @@
+body {
+  background-image: url("images/background.jpg");
+  background-color: #cccccc;
+}
+
+.coincap-badge {
+  /*width: 260px;*/
+  /*height: 80px;*/
+  box-sizing: border-box;
+  background-color: rgba(64, 67, 73, 0.45);
+  box-shadow: inset 0 0 13px -6px rgba(125, 135, 155, 0.8), 0 0 4px black; 
+  border-radius: 6px;
+  color: white;
+  font-family: helvetica;
+  font-size: 12px;
+  padding: 6px;
+  display: inline-flex;
+}
+
+.coincap-badge-left {
+  width: 70px;
+  height: 70px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /*background-color: rgba(255, 255, 125, 0.3);*/
+}
+
+.coincap-badge-icon {
+  /*border: 3px solid black;*/
+}
+
+.coincap-badge-right { 
+  display: flex;
+  align-items: center;
+  jusitfy-content: center;
+  flex-flow: row wrap;
+  /*background-color: rgba(0, 255, 255, 0.3);*/
+}
+
+
+.coincap-badge-icon {
+  box-sizing: border-box;
+  height: 60px;
+}
+
+
+
+.coincap-badge-info-container {
+  width: 90px;
+  height: 30px;
+  margin: 2px;
+  box-sizing: border-box;
+  /*background-color: rgba(0, 0, 255, 0.3);*/
+}
+
+.coincap-badge-info-title {
+  box-sizing: border-box;
+  font-weight: bold;
+  color: #888888;
+  text-align: center;
+  white-space: nowrap;
+}
+
+.coincap-badge-info-value {
+  box-sizing: border-box;
+  text-align: center;
+}
+
+.coincap-badge-price {
+  width: 90px;
+  height: 30px;
+  margin: 2px;
+  box-sizing: border-box;
+  font-family: abel;
+  font-size: 26px;
+  text-align: center;
+  /*background-color: rgba(0, 255, 0, 0.3);*/
+}
+
+.coincap-badge-chart {
+  width: 90px;
+  height: 30px;
+  margin: 2px;
+  box-sizing: border-box;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  /*background-color: rgba(255, 0, 0, 0.3);*/
+}
+
+svg {
+  /*border: 2px solid black;*/
+}
