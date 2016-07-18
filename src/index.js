@@ -79,7 +79,18 @@ var CoincapBadge = (function(){
       var loadCoinData = function(data){
         var locallyHostedLogo = {
           BTC: true,
-          ETH: true};
+          ETH: true,
+          STEEM: true,
+          LTC: true,
+          DASH: true,
+          MAID: true,
+          LSK: true,
+          DOGE: true,
+          NXT: true,
+          XMR: true,
+          AMP: true,
+          WAVES: true
+        };
         if (data.short === this.props.coin){
           this.state.volume24h = Number(data.usdVolume);
           this.state.price = Number(data.price);
