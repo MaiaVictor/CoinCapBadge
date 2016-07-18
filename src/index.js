@@ -184,10 +184,9 @@ var CoincapBadge = (function(){
 window.onload = function(){
   ReactDOM.render(
     <div>{
-      ["BTC", "ETH", "STEEM", "XRP",
-       "LTC", "EMC", "XEM", "DASH",
-       "MAID", "LSK", "DOGE", "NXT",
-       "XMR", "WAVES", "AMP", "DGD"].map(
+      ["BTC", "ETH", "STEEM", "LTC",
+       "DASH", "MAID", "LSK", "DOGE",
+       "NXT", "XMR", "WAVES", "AMP"].map(
       function(coin){
         return <div style={{"margin": "4px", "display": "inline-block"}}>
           <CoincapBadge coin={coin}/>
